@@ -6,7 +6,7 @@
 3. Multiprocessing does well in CPU intensive task as multiple processes would bypass the GIL limitation.
 4. Threads are typically lightweight and start instantaneously whereas processes are spawned/forked and slow to start.
 5. Combining data at the end processes involves use of multiprocessing queue which is a bit slower resulting in deterioration of multiprocessing performance.
-6. Transferring large amount of data through a multiprocessing queue may end up in a deadlock as they are implemented using OS pipes which are not infinitely long and may block until some process uses get() to retrieve data.(https://stackoverflow.com/questions/31665328/python-3-multiprocessing-queue-deadlock-when-calling-join-before-the-queue-is-em)
+6. Transferring large amount of data through a multiprocessing queue may end up in a deadlock as they are implemented using OS pipes which are not infinitely long and may block until some process uses get() to retrieve data.
 
 #### Observations 
 
@@ -32,4 +32,7 @@
             ![Not Cached High](results/not_cached_high.png)
         * Here multiprocessing perform best as expected.
             
-    
+3. Resources
+    * https://sumit-ghosh.com/articles/multiprocessing-vs-threading-python-data-science/
+    * https://stackoverflow.com/questions/31665328/python-3-multiprocessing-queue-deadlock-when-calling-join-before-the-queue-is-em
+    * https://docs.python.org/3/library/multiprocessing.html#multiprocessing-programming

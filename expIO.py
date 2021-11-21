@@ -49,8 +49,8 @@ def get_multiprocess_times(num_processes,image_ids):
 
 if __name__ == "__main__":
     threads_processes  = [1,2,4,8]
-    multithread_times = get_thread_times(threads_processes,list(range(8)))
-    multiprocess_times = get_multiprocess_times(threads_processes,list(range(8)))
+    multithread_times = get_thread_times(threads_processes,list(range(64)))
+    multiprocess_times = get_multiprocess_times(threads_processes,list(range(64)))
     plot_bar_graph([multithread_times,multiprocess_times],threads_processes,"time(s)",
                    "number of threads/processes","IO task","results\\io_task_comparision.png")
 
